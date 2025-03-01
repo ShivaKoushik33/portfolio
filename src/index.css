@@ -7,6 +7,13 @@ body {
   transition: background-color 0.5s, color 0.5s;
 }
 
+.favicon-image {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 32px;
+  height: 32px;
+}
+
 header {
   background: rgba(255, 255, 255, 0.01);
   backdrop-filter: blur(20px) saturate(180%);
