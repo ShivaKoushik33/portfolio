@@ -92,7 +92,7 @@ function App() {
           </motion.button>
         </header>
 
-        <nav className="fixed bottom-0 left-0 right-0 flex justify-center items-center py-6 z-50">
+        <nav className="fixed bottom-0 left-0 right-0 flex justify-center items-center py-6 z-50 ">
           <div className="glass flex justify-around items-center w-[300px] px-8 py-4 mx-auto">
             <motion.a 
               href="#me" 
@@ -392,7 +392,7 @@ function App() {
             </motion.h2>
             
             <motion.div 
-              className="tech-grid grid grid-cols-2 md:grid-cols-4 gap-8 p-8 glassmorphism"
+              className="tech-grid grid sm:grid-cols-2 md:grid-cols-4 gap-8 p-8 glassmorphism"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}

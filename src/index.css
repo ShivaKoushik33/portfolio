@@ -479,10 +479,7 @@ button.rounded-full:hover {
 }
 
 /* Gradient overlay transitions */
-.from-black\/90 {
-  --tw-gradient-from: rgba(0, 0, 0, 0.9);
-  --tw-gradient-stops: var(--tw-gradient-from), transparent;
-}
+
 
 /* Add smooth transitions */
 .transition-all {
