@@ -1,0 +1,516 @@
+@import "tailwindcss";
+
+/* Custom styles */
+
+body {
+  font-family: 'Poppins', sans-serif;
+  transition: background-color 0.5s, color 0.5s;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.01);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 4px 30px rgba(0, 0, 0, 0.1),
+    inset 0 0 30px rgba(255, 255, 255, 0.02);
+}
+
+button {
+  font-weight: 300;
+  letter-spacing: 0.1em;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+button:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+
+nav a {
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #1DA1F2; /* Twitter blue */
+}
+
+form input, form textarea {
+  transition: border-color 0.3s;
+}
+
+input:focus, textarea:focus {
+  border-color: #6366F1;
+  box-shadow: 0 0 5px #6366F1;
+}
+
+/* Dark mode styles */
+.dark .bg-white {
+  background-color: #1a1a1a !important; /* Matte black */
+}
+
+.dark .text-black {
+  color: #f0f0f0 !important; /* Glossy white */
+}
+
+.dark header {
+  background: rgba(0, 0, 0, 0.01);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* Light mode styles */
+.bg-white {
+  background-color: #f0f0f0 !important; /* Glossy white */
+}
+
+.text-black {
+  color: #1a1a1a !important; /* Shining black */
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.37),
+    inset 0 0 30px rgba(255, 255, 255, 0.05),
+    0 0 20px rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 50;
+}
+
+.glass:hover {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.4),
+    inset 0 0 30px rgba(255, 255, 255, 0.07),
+    0 0 25px rgba(255, 255, 255, 0.15);
+}
+
+.glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: inherit;
+  z-index: -1;
+}
+
+.dark .glass::before {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+/* Icons inside the glass effect */
+.glass .nav-icon {
+  font-size: 1.5rem;
+  transition: all 0.3s ease-in-out;
+  position: relative;
+  z-index: 51;
+  color: rgba(0, 0, 0, 0.7);
+  transition: color 0.3s ease;
+}
+
+.glass .nav-icon:hover {
+  transform: translateY(-2px) scale(1.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px 0 rgba(31, 38, 135, 0.2),
+    inset 0 0 30px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 0.2);
+}
+
+.bg-white .glass:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+/* Dark mode specific styles */
+.dark .glass {
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 0 30px rgba(255, 255, 255, 0.03),
+    0 0 20px rgba(255, 255, 255, 0.09);
+}
+
+.dark .glass:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* Navigation icons color adaptation */
+.bg-white .glass .nav-icon {
+  color: rgba(0, 0, 0, 0.8);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.dark .glass .nav-icon {
+  color: rgba(255, 255, 255, 0.8);
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+/* Technology cards styles */
+#technologies .grid > div {
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#technologies .grid > div:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+#technologies .grid > div svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+  transition: all 0.3s ease-in-out;
+}
+
+#technologies .grid > div:hover svg {
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.2));
+  transform: translateY(-2px);
+}
+
+/* Technology Section Styles */
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.37),
+    inset 0 0 32px rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.dark .glassmorphism {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.18);
+}
+
+.tech-card {
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.dark .tech-card {
+  color: rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.tech-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 
+    0 0 20px rgba(255, 255, 255, 0.1),
+    inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.tech-card .icon-wrapper {
+  filter: brightness(0.9) contrast(1.2);
+  transition: all 0.3s ease-in-out;
+}
+
+.tech-card:hover .icon-wrapper {
+  filter: brightness(1.2) contrast(1.4);
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.dark .tech-card:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.tech-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(to bottom right, transparent, rgba(255, 255, 255, 0.1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.dark .tech-card::before {
+  background: linear-gradient(to bottom right, transparent, rgba(0, 0, 0, 0.1));
+}
+
+/* Add responsive padding */
+@media (max-width: 768px) {
+  .tech-grid {
+    padding: 1rem;
+    gap: 1rem;
+  }
+  
+  .tech-card {
+    padding: 1rem;
+  }
+  
+  .glassmorphism {
+    padding: 1rem;
+  }
+}
+
+/* Form input styles */
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Typography classes */
+.title-gradient {
+  background: linear-gradient(135deg, #1a1a1a, rgba(26, 26, 26, 0.7));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 200;
+  letter-spacing: 0.05em;
+  
+}
+
+.dark .title-gradient {
+  background: linear-gradient(135deg, #fff, rgba(255, 255, 255, 0.8));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;   
+}
+
+/* Update existing font styles */
+h2 {
+  font-weight: 200 !important;
+  letter-spacing: 0.1em;
+}
+
+.tech-card span {
+  font-weight: 200;
+  letter-spacing: 0.05em;
+}
+
+p {
+  font-weight: 300;
+  line-height: 1.8;
+}
+
+/* Form elements */
+input, textarea {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 300;
+  border-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.dark input, .dark textarea {
+  border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Form styles for light/dark mode */
+.bg-white .glassmorphism form input,
+.bg-white .glassmorphism form textarea {
+  color: #1a1a1a;
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.bg-white .glassmorphism form input::placeholder,
+.bg-white .glassmorphism form textarea::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.bg-white .glassmorphism form input:focus,
+.bg-white .glassmorphism form textarea:focus {
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Dark mode form styles remain the same */
+.dark .glassmorphism form input,
+.dark .glassmorphism form textarea {
+  color: rgba(255, 255, 255, 0.9);
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.dark .glassmorphism form input::placeholder,
+.dark .glassmorphism form textarea::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+/* Dark/Light mode button styles */
+button.rounded-full {
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #1a1a1a;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.dark button.rounded-full {
+  color: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(0, 0, 0, 0.1);
+}
+
+button.rounded-full:hover {
+  border-color: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.05);
+}
+
+.dark button.rounded-full:hover {
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.signature-text {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.dark .signature-text {
+  background: linear-gradient(135deg, #64f38c 0%, #f79d00 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.signature-text::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: -4px;
+  left: 0;
+  background: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s ease;
+}
+
+.signature-text:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Add these styles for the projects section */
+.group {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.group:hover img {
+  transform: scale(1.05);
+}
+
+.group:hover .absolute {
+  opacity: 1;
+}
+
+/* Optional: Add a subtle shadow to the project cards */
+.group {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 
+              0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+/* Smooth transitions */
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Add these styles for the updated projects section */
+
+.featured-project img {
+  transform: scale(1);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.featured-project:hover img {
+  transform: scale(1.05);
+}
+
+.project-card img {
+  transform: scale(1);
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Hide scrollbar but keep functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+/* Gradient overlay transitions */
+.from-black\/90 {
+  --tw-gradient-from: rgba(0, 0, 0, 0.9);
+  --tw-gradient-stops: var(--tw-gradient-from), transparent;
+}
+
+/* Add smooth transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 500ms;
+}
+
+/* Update project card styles */
+.project-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.project-card img {
+  transform: scale(1);
+  transition: transform 0.5s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+.dark .project-card {
+  background: rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
