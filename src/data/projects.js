@@ -54,7 +54,7 @@ export const projectsData = {
   
   mlProjects: [
     {
-      title: "PCOS Risk Analysis",
+      title: "PCOS Risk Analysiss",
       description: "Machine learning model for PCOS risk testing",
       github: "https://github.com/ShivaKoushik33/PCOS",
       notebook: "https://pcos.vercel.app",
