@@ -54,10 +54,10 @@ export const projectsData = {
   
   mlProjects: [
     {
-      title: "Sentiment Analyzer",
-      description: "Machine learning model for real-time sentiment analysis of text",
-      github: "https://github.com/ShivaKoushik33/sentiment-analyzer",
-      notebook: "https://colab.research.google.com/sentiment-analyzer",
+      title: "PCOS Risk Analysis",
+      description: "Machine learning model for PCOS risk testing",
+      github: "https://github.com/ShivaKoushik33/PCOS",
+      noteboo: "https://pcos.vercel.app",
       technologies: ["Python", "TensorFlow", "NLTK"]
     },
     {
