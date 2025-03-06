@@ -57,7 +57,7 @@ export const projectsData = {
       title: "PCOS Risk Analysis",
       description: "Machine learning model for PCOS risk testing",
       github: "https://github.com/ShivaKoushik33/PCOS",
-      noteboo: "https://pcos.vercel.app",
+      notebook: "https://pcos.vercel.app",
       technologies: ["Python", "TensorFlow", "NLTK"]
     },
     {
