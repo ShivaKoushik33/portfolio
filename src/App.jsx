@@ -77,7 +77,7 @@ function App() {
               className="text-4xl md:text-5xl z-index-10"
               
             >
-              Shiv
+              ShivaKoushik
             </h1>
           </motion.div>
           <motion.button
