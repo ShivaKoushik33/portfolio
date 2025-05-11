@@ -74,7 +74,8 @@ function App() {
             whileTap={{ scale: 0.95 }}
           >
             <h1 
-              className="text-4xl md:text-5xl "
+              className="text-4xl md:text-5xl z-index-10"
+              
             >
               PSK
             </h1>
@@ -392,7 +393,7 @@ function App() {
             </motion.h2>
             
             <motion.div 
-              className="tech-grid grid sm:grid-cols-2 md:grid-cols-4 gap-8 p-8 glassmorphism"
+              className="glassmorphism p-8 flex flex-wrap justify-center gap-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
